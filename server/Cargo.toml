@@ -1,0 +1,12 @@
+[package]
+name = "server"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+mimalloc = { version = "0.1", default-features = false }
+tokio = { version = "1", features = ["full"] }
+axum = { version = "0.7", features = ["http2", "multipart", "ws"] }
+rand = "0.8"
