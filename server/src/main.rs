@@ -63,7 +63,7 @@ async fn upload(req: Request) -> Response {
 
 async fn upload_(req: Request) -> Result<Response, Error> {
     axum::body::to_bytes(req.into_body(), SIZE_LIMIT).await?;
-    let mut response = ().into_response();
+    let mut response = [0_u8; 0].into_response();
 
     let headers = response.headers_mut();
     headers.insert("Cache-Control", "no-store".parse()?);
